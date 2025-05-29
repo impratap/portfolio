@@ -112,14 +112,17 @@
         {% if project_data %}
         <section class="my-project">
             <h1 class="section-title autoDisplay">My Projects 👨‍💻</h1>
+            <div class="project-one">
             {% for project in project_data %}
+            
+
             <div class="project-card">
                 <div class="project-imgbox" >
                     <img src="{{ project.image.url }}" alt="{{ project.name }}" class="project-image">
                     <!--<div class="hover-sign"></div>-->
                 </div>
-                <div class="project-info fadein-left">
-                    <!--<h1>Animated <span class="gradient">Gaming</span> Website</h1>-->
+                    <div class="project-info fadein-left">
+                    <h1>Animated <span class="gradient">Gaming</span> Website</h1>
                     <h1>{{ project.name }}</h1>
                     <p>{{ project.description }}</p>
                     <a href="{{ project.link }}" target="_blank">
@@ -128,8 +131,10 @@
             </div>
             </div>
 
+
             
             {% endfor %}
+            </div>
         </section>
         {% else %}
           <h5 class="text-white text-center">No Data</h5>
@@ -152,25 +157,30 @@
                     <p>I'm a skilled Web Developer proficient in HTML, CSS, JavaScript, and the Django framework. I craft dynamic, user-friendly websites and applications, leveraging front-end and back-end expertise to deliver seamless, responsive designs and robust functionality, turning ideas into impactful digital solutions.</p>
                 </div>
 
-                <!--<div class="slider" reverse="true" style="
+                <div class="slider" reverse="true" style="
                 --width: 100px;
                 --height: 100px;
-                --quantity: 9;
+                --quantity: 12;
                 ">
                     <div class="list">
-                        <div class="item" style="--position: 1"><img src="images/1.png" alt=""></div>
-                        <div class="item" style="--position: 2"><img src="images/2.png" alt=""></div>
-                        <div class="item" style="--position: 3"><img src="images/3.webp" alt=""></div>
-                        <div class="item" style="--position: 4"><img src="images/4.webp" alt=""></div>
-                        <div class="item" style="--position: 5"><img src="images/5.png" alt=""></div>
-                        <div class="item" style="--position: 6"><img src="images/6.png" alt=""></div>
-                        <div class="item" style="--position: 7"><img src="images/7.png" alt=""></div>
-                        <div class="item" style="--position: 8"><img src="images/8.png" alt=""></div>
-                        <div class="item" style="--position: 9"><img src="images/9.png" alt=""></div>
+                        <div class="item" style="--position: 1"><img src="{% static 'images/css.png' %}" alt=""></div>
+                        <div class="item" style="--position: 2"><img src="{% static 'images/js.png' %}" alt=""></div>
+                        <div class="item" style="--position: 3"><img src="{% static 'images/html.png' %}" alt=""></div>
+                        <div class="item" style="--position: 4"><img src="{% static 'images/docker.webp' %}" alt=""></div>
+                        <div class="item" style="--position: 5"><img src="{% static 'images/python.jpg' %}" alt=""></div>
+                        <div class="item" style="--position: 6"><img src="{% static 'images/django.webp' %}" alt=""></div>
+                        <div class="item" style="--position: 7"><img src="{% static 'images/restapi.png' %}" alt=""></div>
+                        <div class="item" style="--position: 8"><img src="{% static 'images/scikitlearn.png' %}" alt=""></div>
+                        <div class="item" style="--position: 9"><img src="{% static 'images/tensorflow.png' %}" alt=""></div>
+                        <div class="item" style="--position: 10"><img src="{% static 'images/pytorch.png' %}" alt=""></div>
+                        <div class="item" style="--position: 11"><img src="{% static 'images/opencv.png' %}" alt=""></div>
+                        <div class="item" style="--position: 12"><img src="{% static 'images/github.png' %}" alt=""></div>
                     </div>
-                </div>-->
+                </div>
             </div>
         </section>
+
+        
 
 
     </div>
