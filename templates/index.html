@@ -1,0 +1,183 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Ankit's Portfolio{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />-->
+  </head>
+  <body>
+
+     {% block content %}
+
+    <div class="container">
+
+
+      <video class="back-vid" autoplay loop muted plays-inline src="{% static 'videos/galaxy_star.mp4' %}"></video>
+
+      <header>
+        <div class="left">
+          <img src="{% static 'images/miladicode.png' %}" alt="Profile">
+          <h2><span style="color: #72a1dea2;">Ankit's</span> Portfolio</h2>
+        </div>
+        
+        <ul>
+            <li><a href="info-section">About</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+        </ul>
+
+
+        <div class="box-icons">
+            <p><a href="https://thesportsinsights.com/" target="_blank"><i class='bx bxl-blogger'></i></a></p>
+            <p><a href="https://github.com/impratap" target="_blank"><i class='bx bxl-github'></i></a></p>
+            <p><a href="https://www.linkedin.com/in/a4pratapsingh/" target="_blank"><i class='bx bxl-linkedin-square'></i></a></p>
+        </div>
+
+      </header>
+
+
+      <div class="blackhole-box" data-aos="fade-down" data-aos-duration="2000">
+          <video autoplay loop muted plays-inline src="{% static 'videos/blackhole.mp4' %}"></video>
+      </div>
+      
+      {% if hero_data %}
+      <section class="hero ">
+        {% for hero in hero_data %}
+            <div class="hero-info autoBlur" data-aos="fade-right" data-aos-duration="1000">
+                <div class="hero-info-title" >
+                    <i class='bx bxl-sketch'></i>
+                    {{ hero.title }}
+                </div>
+
+                <h1 data-aos="fade-right" data-aos-duration="3000">Providing <span class="gradient">the best</span> Project <span class="gradient">Experience</span></h1>
+
+                <p>{{ hero.description }}</p>
+
+                <button><i class='bx bx-send' ></i> Contact Me</button>
+            </div>
+            
+            <div class="skills-video-box " >
+                <video class="skills-video autoBlur" autoplay loop muted plays-inline src="{% static 'videos/hero-video.mp4' %}"></video>
+            </div>
+        
+            <div class="scroll-down"></div>
+            {% endfor %}
+        </section>
+        {% else %}
+          <h5 class="text-white text-center">No Data</h5>
+        {% endif %}
+
+
+        <seaction class="info-section">
+            <h1 class="section-title autoDisplay">Hello,There👋</h1>
+            <div class="info-cards">
+                <div class="card ">
+                    <h1>Hi there, I'm Ankit Singh</h1>
+                    <p>Transitioning from teaching to tech, I’m a Data Science and Backend Developer leveraging newly acquired skills in analytics and scalable systems to build innovative solutions.</p>
+                
+                    <img src="{% static 'images/grid1.png' %}" alt="">
+                </div>
+
+                <div class="card">
+                    <h1>Tech Stack</h1>
+                    <p>Skilled in Python, Data Science, Machine Learning, and frameworks like TensorFlow, PyTorch, Scikit-learn and Django, I build intelligent, data-driven solutions and robust backend systems.</p>
+                
+                    <img src="{% static 'images/grid2.png' %}" alt="">
+                </div>
+
+                <div class="card">
+                    <h1>I’m very flexible in communications.</h1>
+                    <p>I'm based in Delhi, India, and open to opportunities in the Delhi NCR region as well as remote work worldwide.</p>
+                
+                    <video src="{% static 'videos/glob.mp4' %}" autoplay loop muted plays-inline></video>
+
+                    <button><i class='bx bx-send'></i> Contact Me</button>
+                </div>
+
+                <div class="card">
+                    <h1>My Passion for Coding</h1>
+                    <p>I love solving problems and building things through code. Programming isn't just my profession—it's my passion. I enjoy exploring new technologies, and enhancing my skills.</p>
+                
+                    <img src="{% static 'images/grid4.png' %}" alt="">
+                </div>
+            </div>
+        </seaction>
+
+
+        {% if project_data %}
+        <section class="my-project">
+            <h1 class="section-title autoDisplay">My Projects 👨‍💻</h1>
+            {% for project in project_data %}
+            <div class="project-card">
+                <div class="project-imgbox" >
+                    <img src="{{ project.image.url }}" alt="{{ project.name }}" class="project-image">
+                    <!--<div class="hover-sign"></div>-->
+                </div>
+                <div class="project-info fadein-left">
+                    <!--<h1>Animated <span class="gradient">Gaming</span> Website</h1>-->
+                    <h1>{{ project.name }}</h1>
+                    <p>{{ project.description }}</p>
+                    <a href="{{ project.link }}" target="_blank">
+                        <button><i class='bx bx-link-external'></i> Website</button>
+                    </a>
+            </div>
+            </div>
+
+            
+            {% endfor %}
+        </section>
+        {% else %}
+          <h5 class="text-white text-center">No Data</h5>
+        {% endif %}
+
+
+        <section class="skills-section">
+            <h1 class="section-title autoDisplay">
+                My Skills 💪
+            </h1>
+            <div class="skills-box autoDisplay">
+                <img class="skills-image" src="{% static 'images/digital brain.png' %}" alt="">
+                <div class="Data-science">
+                    <h1 class="gradient">Data Science <i class='bx bx-laptop'></i></h1>
+                    <p>I'm a passionate Data Scientist skilled in uncovering insights from complex datasets using Python and machine learning. With expertise in data analysis, visualization, and predictive modeling, I transform raw data into actionable solutions, driving impactful decisions in dynamic, real-world environments.</p>    
+                </div>
+                
+                <div class="coder">
+                    <h1 class="gradient">Coder <i class='bx bx-code-block' ></i></h1>
+                    <p>I'm a skilled Web Developer proficient in HTML, CSS, JavaScript, and the Django framework. I craft dynamic, user-friendly websites and applications, leveraging front-end and back-end expertise to deliver seamless, responsive designs and robust functionality, turning ideas into impactful digital solutions.</p>
+                </div>
+
+                <!--<div class="slider" reverse="true" style="
+                --width: 100px;
+                --height: 100px;
+                --quantity: 9;
+                ">
+                    <div class="list">
+                        <div class="item" style="--position: 1"><img src="images/1.png" alt=""></div>
+                        <div class="item" style="--position: 2"><img src="images/2.png" alt=""></div>
+                        <div class="item" style="--position: 3"><img src="images/3.webp" alt=""></div>
+                        <div class="item" style="--position: 4"><img src="images/4.webp" alt=""></div>
+                        <div class="item" style="--position: 5"><img src="images/5.png" alt=""></div>
+                        <div class="item" style="--position: 6"><img src="images/6.png" alt=""></div>
+                        <div class="item" style="--position: 7"><img src="images/7.png" alt=""></div>
+                        <div class="item" style="--position: 8"><img src="images/8.png" alt=""></div>
+                        <div class="item" style="--position: 9"><img src="images/9.png" alt=""></div>
+                    </div>
+                </div>-->
+            </div>
+        </section>
+
+
+    </div>
+
+    <!-- Link your custom JavaScript file -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+    {% endblock %}
+  </body>
+</html>
