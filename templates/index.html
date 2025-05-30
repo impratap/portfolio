@@ -26,9 +26,9 @@
         </div>
         
         <ul>
-            <li><a href="info-section">About</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Projects</a></li>
+            <li><a href="#1">About</a></li>
+            <li><a href="#3">Skills</a></li>
+            <li><a href="#2">Projects</a></li>
         </ul>
 
 
@@ -38,8 +38,11 @@
             <p><a href="https://www.linkedin.com/in/a4pratapsingh/" target="_blank"><i class='bx bxl-linkedin-square'></i></a></p>
         </div>
 
+    
+
       </header>
 
+      
 
       <div class="blackhole-box" data-aos="fade-down" data-aos-duration="2000">
           <video autoplay loop muted plays-inline src="{% static 'videos/blackhole.mp4' %}"></video>
@@ -58,7 +61,7 @@
 
                 <p>{{ hero.description }}</p>
 
-                <button><i class='bx bx-send' ></i> Contact Me</button>
+                <a href="#5"><button><i class='bx bx-send' ></i> Contact Me</button></a>
             </div>
             
             <div class="skills-video-box " >
@@ -73,7 +76,7 @@
         {% endif %}
 
 
-        <seaction class="info-section">
+        <seaction class="info-section" id="1">
             <h1 class="section-title autoDisplay">Hello,There👋</h1>
             <div class="info-cards">
                 <div class="card ">
@@ -85,7 +88,7 @@
 
                 <div class="card">
                     <h1>Tech Stack</h1>
-                    <p>Skilled in Python, Data Science, Machine Learning, and frameworks like TensorFlow, PyTorch, Scikit-learn and Django, I build intelligent, data-driven solutions and robust backend systems.</p>
+                    <p>Skilled in Python, Data Science, Machine Learning, and frameworks like TensorFlow, PyTorch, Scikit-learn and Django, I build intelligent, data-driven solutions.</p>
                 
                     <img src="{% static 'images/grid2.png' %}" alt="">
                 </div>
@@ -96,7 +99,7 @@
                 
                     <video src="{% static 'videos/glob.mp4' %}" autoplay loop muted plays-inline></video>
 
-                    <button><i class='bx bx-send'></i> Contact Me</button>
+                    <a href="#5"><button><i class='bx bx-send' ></i> Contact Me</button></a>
                 </div>
 
                 <div class="card">
@@ -109,20 +112,23 @@
         </seaction>
 
 
+
+
+        
+
+
         {% if project_data %}
-        <section class="my-project">
-            <h1 class="section-title autoDisplay">My Projects 👨‍💻</h1>
+        <section class="my-project" id="2">
+            <h1 class="section-title autoDisplay">My Data Science Projects 👨‍💻</h1>
             <div class="project-one">
             {% for project in project_data %}
             
 
             <div class="project-card">
-                <div class="project-imgbox" >
+                <div class="project-imgbox autoBlur" >
                     <img src="{{ project.image.url }}" alt="{{ project.name }}" class="project-image">
-                    <!--<div class="hover-sign"></div>-->
                 </div>
                     <div class="project-info fadein-left">
-                    <h1>Animated <span class="gradient">Gaming</span> Website</h1>
                     <h1>{{ project.name }}</h1>
                     <p>{{ project.description }}</p>
                     <a href="{{ project.link }}" target="_blank">
@@ -141,7 +147,42 @@
         {% endif %}
 
 
-        <section class="skills-section">
+
+
+        {% if project_data %}
+        <section class="my-project">
+            <h1 class="section-title autoDisplay">My Django Projects 👨‍💻</h1>
+            <div class="project-one">
+            {% for project in project_data %}
+            
+
+            <div class="project-card">
+                <div class="project-imgbox" >
+                    <img src="{{ project.image.url }}" alt="{{ project.name }}" class="project-image">
+                </div>
+                    <div class="project-info fadein-left">
+                    <h1>{{ project.name }}</h1>
+                    <p>{{ project.description }}</p>
+                    <a href="{{ project.link }}" target="_blank">
+                        <button><i class='bx bx-link-external'></i> Website</button>
+                    </a>
+            </div>
+            </div>
+
+
+            
+            {% endfor %}
+            </div>
+        </section>
+        {% else %}
+          <h5 class="text-white text-center">No Data</h5>
+        {% endif %}
+
+
+       
+
+
+        <section class="skills-section" id="3">
             <h1 class="section-title autoDisplay">
                 My Skills 💪
             </h1>
@@ -149,12 +190,12 @@
                 <img class="skills-image" src="{% static 'images/digital brain.png' %}" alt="">
                 <div class="Data-science">
                     <h1 class="gradient">Data Science <i class='bx bx-laptop'></i></h1>
-                    <p>I'm a passionate Data Scientist skilled in uncovering insights from complex datasets using Python and machine learning. With expertise in data analysis, visualization, and predictive modeling, I transform raw data into actionable solutions, driving impactful decisions in dynamic, real-world environments.</p>    
+                    <p>I'm a passionate Data Scientist skilled in uncovering insights from complex datasets using Python and machine learning. With expertise in data analysis, visualization, and predictive modeling, .</p>    
                 </div>
                 
                 <div class="coder">
                     <h1 class="gradient">Coder <i class='bx bx-code-block' ></i></h1>
-                    <p>I'm a skilled Web Developer proficient in HTML, CSS, JavaScript, and the Django framework. I craft dynamic, user-friendly websites and applications, leveraging front-end and back-end expertise to deliver seamless, responsive designs and robust functionality, turning ideas into impactful digital solutions.</p>
+                    <p>I'm a skilled Web Developer proficient in HTML, CSS, JavaScript, and the Django framework. I craft dynamic, user-friendly websites and applications, .</p>
                 </div>
 
                 <div class="slider" reverse="true" style="
@@ -181,6 +222,48 @@
         </section>
 
         
+
+        <section class="contact-section" id=5>
+            <h1 class="section-title autoDisplay">Let's talk😊</h1>
+
+            <div class="social-box autoBlur">
+                <a href=""><i class='bx bxs-phone'></i> +91 7982550519</a>
+                <a href=""><i class='bx bxl-gmail' ></i>a4pratapsingh@gmail.com</a>
+                <a href="https://www.linkedin.com/in/a4pratapsingh/"><i class='bx bxl-linkedin-square' ></i>Linkedin</a>
+                <div class="social-icons">
+                    <a href="https://thesportsinsights.com/"><i class='bx bxl-blogger' ></i></a>
+                    <a href="https://github.com/impratap"><i class='bx bxl-github' ></i></a>
+                    <a href="https://www.linkedin.com/in/a4pratapsingh/"><i class='bx bxl-linkedin-square' ></i></a>
+                </div>
+            </div>
+
+            <div class="contact-box autoBlur">
+                <p>Wheter you're looking to build a new website, improve your existing platform, or bring a unique project to file. i'm here to help.</p>
+            
+                <p>Full Name</p>
+                <input placeholder="Your Full name" type="full name">
+
+                <p>Email Address</p>
+                <input placeholder="Your Email" type="Contact">
+
+                <p>Your Message</p>
+                <input  class="input-message" type="contact" placeholder="shaire your thoughts...">
+
+                <button>Send Message <i class='bx bx-mail-send'></i></button>
+            </div>
+        
+        </section> 
+
+
+        <section class="footer">
+            <h1>©️2025, Made by Ankit Singh</h1>
+            <div class="box-icons">
+                <p><i class='bx bxl-youtube'></i></p>
+                <p><i class='bx bxl-github'></i></p>
+                <p><i class='bx bxl-linkedin-square'></i></p>
+            </div>
+        </section>
+
 
 
     </div>

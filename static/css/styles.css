@@ -6,6 +6,11 @@ body{
 }
 
 
+html{
+    scroll-behavior: smooth;
+}
+
+
 .container{
     position: relative;
     width: 100%;
@@ -141,7 +146,7 @@ header ul a:hover{
     padding: 8px 5px;
     border-radius: 50px;
     border: 1px solid #72a1de94;
-    width: 450px;
+    width: 300px;
     background-color: #2200493d;
     box-shadow: 0 0 5px #72a1de84;
 }
@@ -505,6 +510,11 @@ text-align: start;
 
 
 
+/* project django part */
+
+
+
+
 /* Skills section */
 .skills-section{
     display: flex;
@@ -632,6 +642,168 @@ text-align: start;
 
 
 
+
+/* comment section  */
+
+
+.contact-section{
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    align-items: center;
+    position: relative;
+}
+
+.contact-section h1{
+    position: absolute;
+    top: 10%;
+    left: 40%;
+}
+
+.social-box {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.social-box a{
+    color: lightgray;
+    text-decoration: none;
+    font-size: 20px;
+    text-wrap: nowrap;
+}
+
+.social-box i{
+    color: #7668ff;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.social-icons a i{
+    color: white;
+    margin-top: 40px;
+}
+
+.contact-box p{
+    max-width: 400px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+} 
+
+.contact-box input{
+    padding: 7.5px 30px;
+    background-color: lightgray;
+    width: 80%;
+    height: 25px;
+    border: none;
+    outline : none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.contact-box button{
+    margin-top: 30px;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 10px;
+    border: 1px solid #72a1de81;
+    background-color: #2200493d;
+    box-shadow: 0 0 5px #72a1de81;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-box button:hover{
+    opacity: 0.8;
+    box-shadow: 0 0 15px #72a1de81;
+}
+  
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.121);
+    z-index: 999;
+    padding: 0 3rem;
+}
+
+
+/* auto blur effect */
+
+.autoBlur{
+    animation: autoBlurAnimation linear both;
+    animation-timeline: view();
+
+}
+@keyframes autoBlurAnimation{
+    0%{
+        filter: blur(40px);
+    }
+    35%,65%{
+        filter: blur(0);
+        opacity: 1;
+    }
+    100%{
+        filter: blur(40px);
+        opacity: 0;
+    }
+}
+
+
+
+
+/* AUTO DISPLAY ANIMAION */
+.autoDisplay{
+    animation: autoDisplayAnimation both;
+    animation-timeline: view();
+
+}
+
+@keyframes autoDisplayAnimation{
+    from{
+        filter: blur(10px);
+        transform: translateY(-200px) scale(0);
+    } 50%{
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateX(0) scale(1);
+    }
+}
+
+
+/* FADEIN_LEFT */
+
+.fadein-left{
+    animation: fadeInLeftAnimation both;
+    animation-timeline: view();
+}
+
+@keyframes fadeInLeftAnimation{
+    0%{
+        opacity: 0;
+        transform: translateX(-500px) scale(0.2);
+        filter: blur(10px);
+    } 35%,65%{
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        filter: blur(0px);
+    }100%{
+        filter: blur(10px);
+    }
+}
+
+
+
+
+
+
 @media (max-aspect-ratio: 16/9){
     .back-vid{
         width: auto;
@@ -644,4 +816,329 @@ text-align: start;
         width: 100%;
         height: auto;
     }
+}
+
+
+@media screen and (max-width: 1200px){
+    .blackhole-box video{
+        margin-top: -20%;
+    }
+
+    .hero-info h1{
+        font-size: 40px;
+        max-width: 400px;
+        line-height: 40px;
+    }
+
+    .hero-info P{
+        max-width: 300px;
+    }
+
+    .skills-video-box{
+        right: 0%;
+    }
+
+    .skills-video-box video{
+        height: 500px;
+    }
+
+    .info-cards{
+        grid-template-columns: auto;
+    }
+
+    .card:nth-child(3){
+        grid-column: span 2;
+        height: 70vh;
+    }
+
+    .info-cards .card h1{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .info-cards .card:nth-child(3) h1{
+        bottom: 25%;
+    }
+
+    .card video{
+        height: 60%;
+
+        margin-top: 5%;
+    }
+
+    .my-project{
+        margin-bottom: 200px;
+        scale: 0.8;
+    }
+
+    .contact-section .section-title {
+        left: 30%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    header {
+        position: fixed;
+        height: 50px;
+    }
+
+    header ul{
+        display: none;
+    }
+
+    header .box-icons{
+        display: none;
+    }
+
+    .menu-icon{
+        display: inline;
+    }
+
+    .blackhole-box video {
+        width: 100%;
+        margin-top: -15%;
+    }
+
+    .autoBlur{
+        animation: none;
+    }
+    
+    .hero{
+        flex-direction: column;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right:0;
+        
+    }
+    .hero-info{
+        bottom: 5%;
+    }
+
+    .scroll-down{
+        bottom: 5%;
+    }
+
+    .hero .skills-video-box{
+        height: 200px;
+        top: 5%;
+    }
+
+
+
+    .info-cards{
+        grid-template-columns: auto;
+    }
+
+    .card:nth-child(3){
+        grid-column: span 2;
+        height: 70vh;
+    }
+
+    .card video{
+        width: 100%;
+    }
+    
+    .container{
+        height: 100%;
+    }
+
+    .project-vidbox video{
+        width: 250px;
+        margin-left: -100px;
+    }
+
+    .project-info{
+        overflow: hidden;
+        padding-left: 0;
+        margin-left: -50px;
+    }
+
+    .project-info h1{
+        font-size: 20px;
+        max-width: 200px;
+        text-wrap: wrap;
+    }
+
+    .project-info p{
+        font-size: 10px;
+        text-wrap: wrap;
+        max-width: 200px;
+        min-width: 0;
+    }
+
+    .project-info button{
+        padding: 5px 10px;
+    }
+
+    .my-project{
+        margin-bottom: 600px;
+    }
+
+    .project-card{
+        flex-direction: column;
+        margin-left: 25%;
+        gap: 30px;
+    }
+    
+    .project-vidbox{
+        min-width: 200px;
+    }
+
+    .project-info{
+        width: 85%;
+    }
+
+    .project-info h1{
+        text-wrap: nowrap;
+    }
+
+    .project-info p{
+        max-width: 300px;
+    }
+
+    .Data-science{
+        top: 15%;
+        left: 18%;
+    }
+
+    .Data-science h1{
+        margin-bottom: 0;
+        margin-top: 70px;
+    }
+
+    .coder{
+        top: 50%;
+        left: 18%;
+    }
+
+    .coder h1{
+        margin-bottom: 0;
+    }
+
+    .slider .list .item img{
+        width: 70%;
+    }
+
+    .contact-section{
+        flex-direction: column;
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+
+    .footer{
+        font-size: 10px;
+    }
+
+    .social-box{
+        margin-left: -90px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .hero .skills-video-box {
+        display: none;
+        
+    }
+
+    .blackhole-box {
+        overflow: hidden;
+    }
+
+    .blackhole-box video {
+        width: 140%;
+        margin-top: -27%;
+
+    }
+
+    .left {
+        scale: 0.9;
+        margin-left: -30px;
+    }
+
+    .left h2 {
+        font-size: 20px;
+    }
+
+    .hero {
+        scale: 0.9;
+    }
+
+    .hero-info{
+        bottom: 15%;
+    }
+
+    .hero-info h1{
+        font-size: 35px;
+    }
+
+    .scroll-down{
+        bottom: 15%;
+        left: 60%;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    .info-cards{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card {
+        min-height: 20rem;
+    }
+
+    .card h1{
+        bottom: 30%;
+        font-size: 5px;
+    }
+
+    .project-card {
+        height: 50%;
+    }
+
+    .project-info p{
+        margin-bottom: 15px;
+    }
+
+    .project-info{
+        margin-left: -80px;
+    }
+
+    .skills-box{
+        height: 120vh;
+        margin-right: 30px;
+    }
+
+    .slider{
+        bottom: 0%;
+    }
+
+    .contact-section{
+        scale: 0.9;
+        height: 120vh;
+    }
+
+    .contact-section .section-title {
+        top: -30px;
+        left: 25%;
+    }
+
+    .footer{
+        padding: 15px;
+    }
+
+    .footer h1{
+        max-width: 150px;
+    }
+
+    .footer .box-icons{
+        gap: 10px;
+    }
+
+
 }
